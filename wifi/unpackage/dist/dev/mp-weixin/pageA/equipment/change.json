@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "修改部门通道",
-  "usingComponents": {
-    "uni-popup": "/components/uni-popup/uni-popup"
-  }
-}

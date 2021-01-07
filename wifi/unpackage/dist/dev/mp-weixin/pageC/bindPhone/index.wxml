@@ -1,1 +1,0 @@
-<view class="bindPhone"><view class="title">已绑定手机号</view><view class="title">{{''+phone+''}}</view></view>

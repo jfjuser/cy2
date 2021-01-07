@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "通行记录",
-  "usingComponents": {
-    "uni-calendar": "/components/uni-calendar/uni-calendar"
-  }
-}
