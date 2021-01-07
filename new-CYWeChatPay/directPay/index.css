@@ -1,0 +1,39 @@
+body, html{
+  margin: 0;
+  padding: 0; 
+}
+
+.order-info{
+  padding: .8125rem;
+  border-top: .625rem solid #dfdddd;
+  border-bottom: .625rem solid #dfdddd;
+  font-size: 14px;
+}
+
+.order-info div{
+  display: flex;
+  justify-content: space-between;
+  height: 2.25rem;
+  line-height: 2.25rem;
+  color: #666666;
+}
+
+.money{
+  font-size: 1.25rem;
+  color: #e64b4b;
+}
+
+.pay{
+  width: 80%;
+  background: #5dda5d;
+  border-radius: .625rem;
+  color: white;
+  margin: 1.125rem auto;
+  text-align: center;
+  line-height: 2.875rem;
+  height: 2.875rem;
+}
+
+.pay:hover{
+  box-shadow: 0 0 1.875rem rgb(156, 207, 140);
+}

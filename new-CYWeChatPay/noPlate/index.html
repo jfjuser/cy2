@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>无牌车入场</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div id="app" class="container">
+    <!-- <div class="park-name">车场名称</div> -->
+    <div class="pass-in" @click="init">我要入场</div>
+    <div class="instruction">
+      <h3>使用说明</h3>
+      <p>1、该功能仅适用于临牌、无牌或无法识别车牌的车辆</p>
+      <p>2. 停车结束请在出口处扫专用二维码出场</p>
+      <p>3. 两次扫码务必使用相同的方式，否则将无法缴费离场</p>
+    </div>
+  </div>
+  <script src="./libs/vue.js"></script>
+  <script src="./libs/axios.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>

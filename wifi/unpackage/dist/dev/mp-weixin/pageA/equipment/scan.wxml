@@ -1,0 +1,1 @@
+<view class="scan"><van-button class="scanclick" vue-id="5a36f49d-1" round="{{true}}" type="info" icon="scan" data-event-opts="{{[['^click',[['scaning']]]]}}" data-com-type="wx" bind:click="__e" bind:__l="__l"></van-button><text class="tit">扫一扫设备上的二维码进行绑定</text></view>

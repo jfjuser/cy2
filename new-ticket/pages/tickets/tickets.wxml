@@ -1,0 +1,21 @@
+<!--pages/me/me.wxml-->
+<loading hidden="{{hidden}}">
+    加载中.....
+</loading>
+<view class="container">
+    <form bindsubmit="formSubmit" wx:if="items.length>0">
+        <view class="section__title">选择优惠券类型</view>
+        <radio-group class="radio-group" name="type">
+            <view class="radio" wx:for="{{items}}" wx:key="id" wx:for-index="idx">
+                <radio value="{{item.id}}" />{{item.name}}
+            </view>
+        </radio-group>
+
+        <view>
+            <button type='primary' disabled='{{disabled}}' formType="submit" class='btn_bing'>生成二维码</button>
+        </view>
+    </form>
+    <view class='noData' wx:else="items.lenght === 0">
+        暂无优惠券类型，请先在平台设置
+    </view>
+</view>

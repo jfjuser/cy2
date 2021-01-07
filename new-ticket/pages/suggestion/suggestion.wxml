@@ -1,0 +1,55 @@
+<view class='contain'>
+    <view class='text'>
+        致力于提供专业、高效和高品质的服务，欢迎您提供宝贵的意见和建议。
+    </view>
+    <view class='form'>
+        <form bindsubmit="formSubmit">
+            <view class='item'>
+                <view class='title'>您的反馈是</view>
+                <view >
+                    <radio-group name="suggestionSelect" class='radio' style="display:flex;justify-content: space-between;">
+                        <label>
+                            <radio value="0"/> <text style='font-size: 30rpx;'>咨询</text>
+                        </label>
+                        <label>
+                            <radio value="1"/> <text style='font-size: 30rpx;'>建议</text>
+                        </label>
+                        <label>
+                            <radio value="2"/> <text style='font-size: 30rpx;'>投诉</text>
+                        </label>
+                    </radio-group>
+                </view>
+            </view>
+            <view class='item'>
+                <view class='phone'>
+                    <label>联系方式</label>
+                    <view>
+                        <input name="phone" type='text' placeholder='以便我们给您回复'></input>
+                    </view>
+                </view>
+            </view>
+            <view class='item'>
+                <view class='title'>反馈内容<text class='suggestion'>（0-120字）</text></view>
+                <view>
+                    <textarea name="suggestionContant"  placeholder="我们将为您不断改进" />
+                </view>
+            </view>
+            <view class='item'>
+                <view class='title'>上传凭证<text class='suggestion'>（不超过三张图片）</text></view>
+                <view class='pic'>
+                    <view wx:for="{{images}}" wx:key="index">
+                        <image src='{{item}}'></image>
+                    </view>
+                    <view wx:if="{{images.length < 3}}" bindtap="chooseImg">
+                        <image  src='/images/plus.png'></image>
+                    </view>
+                </view>
+            </view>
+            <view class='form-footer'>
+                <view class='form-footer'>
+                    <button formType="submit" type='primary' loading='{{loading}}'>保存</button>
+                </view>
+            </view>
+        </form>
+    </view>
+</view>

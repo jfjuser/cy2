@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "人脸管理",
+  "usingComponents": {
+    "face-detail": "/pageB/faceDetail/index",
+    "add-face": "/pageB/addFace/index"
+  }
+}

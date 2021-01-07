@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>聚合支付-扫码支付</title>
+  <link rel="stylesheet" href="./libs/style/fonts/font-awesome.min.css">
+  <link rel="stylesheet" href="./libs/style/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./libs/style/AdminLTE.min.css">
+  <!--UC  -->
+  <meta name="full-screen" content="yes">
+  <meta name="screen-orientation" content="landscape">
+  <!-- QQ -->
+  <meta name="x5-orientation" content="landscape">
+  <meta name="x5-fullscreen" content="true">
+  <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style>
+    html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #0d0d0d;
+            background-size: 100% 100%;
+        }
+        p {
+            margin: 0;
+            margin-top: 5px;
+            padding: 0;
+        }
+        #content {
+            width: 100%;
+            height: 100%;
+            background-image: url("./libs/img/bg-agg.png") !important;
+            background-size: cover;
+        }
+        #ercode {
+            margin: 10px auto;
+        }
+        #erCodeImg {
+            width: 420px;
+            height: 420px;
+            margin: auto;
+        }
+        #erCodeImg img {
+            margin: 0 auto !important;
+        }
+        #head_tip {
+            font-weight: bold;
+            color: darkgreen;
+            font-size: 22px;
+        }
+        #detail {
+            margin: 0 auto;
+            width: 400px;
+            font-size: 20px;
+            color: black;
+        }
+        #plate {
+            color: black;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        #head {
+            font-size: 20px;
+            color: black;
+            padding: 10px;
+            text-align: right;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #tips {
+            color: darkslategray;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        #price {
+            color: green;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .icon-center {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+            margin: 10px auto 0;
+        }
+        .icon-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+  <div id="content">
+    <div id="head">
+      <div>
+        <img class="img-logo" src="./libs/img/jianshe.png" alt="支付" height="60px" width="50px">
+        <img class="img-logo" style="width: 256px" src="./libs/img/jianshe1.png" alt="中国建设银行" height="50px" width="60px">
+      </div>
+      <div id="head_tip">聚合-扫码支付</div>
+    </div>
+
+    <div id="ercode" style="z-index: 10000;">
+      <div id="erCodeImg" style="text-align: center;padding: 10px;background: white"></div>
+    </div>
+    <div id="detail" style="text-align: center">
+      <p id="plate"></p>
+      <p id="price"></p>
+      <p id="tips"></p>
+    </div>
+    <div class="icon-center">
+      <div class="icon">
+        <div style="text-align: center">
+          <img class="img-logo" src="./libs/img/jianshe.png" alt="支付" height="48px" width="48px">
+        </div>
+        <p class="icon-title">龙支付</p>
+      </div>
+      <div class="icon">
+        <div style="text-align: center">
+          <img class="img-logo" src="./libs/img/cash.png" alt="银联支付" height="48px" width="48px">
+        </div>
+        <p class="icon-title">银联支付</p>
+      </div>
+      <div class="icon">
+        <div style="text-align: center">
+          <img class="img-logo" src="./libs/img/wechat.png" alt="微信支付" height="48px" width="48px">
+        </div>
+        <p class="icon-title">微信支付</p>
+      </div>
+      <div class="icon">
+        <div style="text-align: center">
+          <img class="img-logo" src="./libs/img/epay.png" alt="支付宝支付" height="48px" width="48px">
+        </div>
+        <p class="icon-title">支付宝支付</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-select" class="modal fade" data-backdrop="static" data-keyboard="false" aria-hidden="true"
+    aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel" style="text-align: center;">选择通道</h4>
+        </div>
+
+        <div class="modal-body form-horizontal">
+          <form>
+            <div class="form-group">
+              <label class="control-label col-md-3">通道</label>
+              <div class="col-md-8">
+                <select name="local_id" id="Local_id" class="form-control">
+
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" onclick="formSubmit()" class="btn btn-success">确定</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./libs/jquery/jquery.js"></script>
+  <script src="./libs/style/bootstrap/js/bootstrap.js " charset="UTF-8"></script>
+  <script src="./libs/qrCode/qrcode.min.js"></script>
+  <script>
+    //屏幕适应
+    var clientWidth = document.body.clientWidth;
+    var clientHeight = document.body.clientHeight;
+    let cookie, departmentId, localId
+    //var host = 'http://192.168.0.109:9000'
+    //var websocket = 'ws://192.168.0.109:8083/ws/CCBAGGERCODE'
+    /**********  【 原始 】  **********/
+    // var host = 'https://www.cytingchechang.com'
+    // var websocket = 'wss://www.cytingchechang.com/ws/CCBAGGERCODE'
+    /**********  【 新修改 】  **********/
+    var host = 'http://cy2.40mi.com'
+    var websocket = 'ws://cy2.40mi.com/ws/CCBAGGERCODE'
+
+    var wsSuccess = true;
+
+    function bodyScale() {
+      var devicewidth = document.body.clientWidth;
+      var scale = devicewidth / 640;
+      if (devicewidth > 1024) {
+        scale = devicewidth / 1366;
+      }
+      document.body.style.zoom = scale;
+    }
+
+    window.onload = function () {
+      $("#erCodeImg").hide();
+      let url = location.href
+      if (url.indexOf('?') > -1) {
+        departmentId = url.split('?')[1].split('&')[0].split('=')[1]
+        cookie = url.split('?')[1].split('&')[1].split('=')[1]
+        getLocal(departmentId, cookie)
+        bodyScale();
+      } else {
+        alert('地址无效，请重新登录！')
+      }
+      window.setInterval(function () {
+          if(wsSuccess == false){
+            console.log("断线重连中...");
+            ws = connectServer(localId);
+          }
+      }, 5000);
+    };
+
+    window.onresize = function () {
+      bodyScale();
+    }
+    
+    function getLocal(departmentId, cookie) {
+      $.ajax({
+        url: host + '/v1/tcpToken/list/' + departmentId,
+        dataType: 'JSON',
+        method: 'GET',
+        beforeSend: function (request) {
+          request.setRequestHeader('AdminToken', cookie)
+        },
+        success: function (res) {
+          if (res.code == 1) {
+            if (res.data == null || res.data.length < 1) {
+              alert('暂无通道，请先配置通道!')
+            } else {
+              var html = ''
+              for (var i = 0; i < res.data.length; i++) {
+                html += '<option value="' + res.data[i].localId + '">' + res.data[i].localName + '</option>'
+              }
+              $('#Local_id').html(html)
+              $('#modal-select').modal('show')
+            }
+          } else {
+            alert(res.message)
+          }
+        },
+        error: function (error) {
+          alert('获取出口信息失败，请稍后刷新页面！')
+        }
+      })
+    };
+
+    function formSubmit() {
+      var data = $('#Local_id').val();
+      console.log(data)
+      if (data == '' || data == null || data == 'undefined') {
+        alert('请先选择通道')
+      } else {
+        localId = data
+        connectWebsocket(data)
+      }
+    }
+
+    var url = location.href;
+    var qrCode = new QRCode(document.getElementById("erCodeImg"), {
+      text: '',
+      width: 400, //生成的二维码的宽度
+      height: 400, //生成的二维码的高度
+      colorDark: "#000000", // 生成的二维码的深色部分
+      colorLight: "#fff", //生成二维码的浅色部分
+      correctLevel: QRCode.CorrectLevel.H
+    });
+    
+    var ws;
+    //创建websocket链接
+    function connectWebsocket(data) {
+      if (window.WebSocket) {
+        ws = connectServer(data);
+        $('#modal-select').modal('hide')
+      } else {
+        alert('您的浏览器暂时不支持动态二维码展示，可尝试换谷歌浏览器!')
+      }
+    }
+
+    function connectServer(localId) {
+      if (ws != null) {
+        ws.close()
+      }
+      ws = new WebSocket(websocket + departmentId + localId + '-' + new Date().getTime());
+      ws.onopen = function () {
+        wsSuccess = true;
+        $("#tips").text("当前正在监听车辆出场...")
+      };
+      ws.onmessage = function (res) {
+        var result = JSON.parse(res.data);
+        var data = result.data;
+        if (data != null) {
+          if (data.type == 1) {
+            //支付信息
+            $("#plate").text("===" + data.plate + "===");
+            $("#price").text("收费【" + data.price + "】元");
+            currentPlate = data.plate;
+            if (result.code == 1) {
+              $("#erCodeImg").show();
+              qrCode.makeCode(data.pay_url);
+              $("#tips").text("温馨提示：请认准车牌后再扫码支付！")
+            } else {
+              //失败
+              $("#erCodeImg").hide();
+              $("#tips").text(result.message);
+            }
+          } else if (data.type == 2) {
+            //出场信息
+            console.log(currentPlate + '---' + data.plate)
+            if (currentPlate == data.plate) {
+              $("#erCodeImg").hide();
+              $("#price").text("【缴费成功】");
+              $("#tips").text("当前正在监听车辆出场...");
+            }
+          }
+          $.ajax({
+            url: host + '/v1/ccb/push',
+            dataType: 'JSON',
+            data: {
+              successKey: 'CCBAGGKEY' + departmentId + localId + data.plate + data.type
+            },
+            method: 'GET',
+            beforeSend: function (request) {
+              request.setRequestHeader('AdminToken', cookie)
+            },
+            complete: function(){}
+          })
+        }
+      };
+      // 链接失败
+      ws.onerror = function (err) {
+        wsSuccess = false;
+      };
+      ws.onclose = function() {
+        wsSuccess = false;
+      };
+    }
+  </script>
+</body>
+
+</html>

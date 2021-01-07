@@ -1,0 +1,1 @@
+<view class="scan"><van-button class="scanclick" vue-id="1c31350f-1" round="{{true}}" type="info" icon="scan" data-event-opts="{{[['^click',[['clickRequest']]]]}}" data-com-type="wx" bind:click="__e" bind:__l="__l"></van-button></view>

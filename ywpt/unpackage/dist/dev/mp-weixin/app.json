@@ -1,0 +1,105 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/person/index"
+  ],
+  "subPackages": [
+    {
+      "root": "pageA",
+      "pages": [
+        "project/index",
+        "search/index",
+        "warn/index"
+      ],
+      "name": "pageA"
+    },
+    {
+      "root": "pageB",
+      "pages": [
+        "equipment/index"
+      ],
+      "name": "pageB"
+    },
+    {
+      "root": "pageC",
+      "pages": [
+        "authorize/index",
+        "phoneLogin/index",
+        "login/index",
+        "userInfo/index",
+        "bindPhone/index"
+      ],
+      "name": "pageC"
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#1296db",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#1296db",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/home.png",
+        "selectedIconPath": "static/home_ok.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/person/index",
+        "iconPath": "static/person.png",
+        "selectedIconPath": "static/person_ok.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": [
+        "pageA",
+        "pageB",
+        "pageC"
+      ]
+    },
+    "pages/person/index": {
+      "network": "all",
+      "packages": [
+        "pageC"
+      ]
+    }
+  },
+  "permission": {},
+  "usingComponents": {
+    "van-field": "/static/vant/field/index",
+    "van-notice-bar": "/static/vant/notice-bar/index",
+    "van-grid": "/static/vant/grid/index",
+    "van-grid-item": "/static/vant/grid-item/index",
+    "van-radio-group": "/static/vant/radio-group/index",
+    "van-radio": "/static/vant/radio/index",
+    "van-button": "/static/vant/button/index",
+    "van-toast": "/static/vant/toast/index",
+    "van-search": "/static/vant/search/index",
+    "van-popup": "/static/vant/popup/index",
+    "van-overlay": "/static/vant/overlay/index",
+    "van-transition": "/static/vant/transition/index",
+    "van-empty": "/static/vant/empty/index",
+    "van-loading": "/static/vant/loading/index",
+    "van-icon": "/static/vant/icon/index",
+    "van-swipe-cell": "/static/vant/swipe-cell/index",
+    "van-checkbox-group": "/static/vant/checkbox-group/index",
+    "van-checkbox": "/static/vant/checkbox/index",
+    "van-tabs": "/static/vant/tabs/index",
+    "van-tab": "/static/vant/tab/index",
+    "van-cell": "/static/vant/cell/index",
+    "van-dropdown-menu": "/static/vant/dropdown-menu/index",
+    "van-dropdown-item": "/static/vant/dropdown-item/index",
+    "van-count-down": "/static/vant/count-down/index"
+  },
+  "sitemapLocation": "sitemap19.json"
+}

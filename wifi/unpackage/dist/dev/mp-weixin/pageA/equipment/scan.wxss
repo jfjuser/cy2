@@ -1,0 +1,32 @@
+
+.scan, .scanclick{
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
+.scanclick button{
+	width: 300rpx;
+	margin-top: 200rpx;
+	height: 300rpx;
+}
+.scanclick .van-icon{
+	font-size: 120rpx !important;
+}
+.scan .tit{
+	width: 100%;
+	color: #909399;
+	font-size: 32rpx;
+	text-align: center;
+	margin: 40rpx 0;
+}
+

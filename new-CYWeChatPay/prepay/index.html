@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>车牌预付</title>
+  <link rel="stylesheet" href="./libs/elementUI/index.css">
+  <link rel="stylesheet" href="./index.css">
+   <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" v-cloak>
+    <!-- 车牌选择 -->
+    <header>
+      <div class="gasCar" :class="{active:isActive}"  @click="gasCar">汽油车</div>
+      <div class="energyCar" :class="{active:!isActive}"  @click="energyCar">新能源</div>
+    </header>
+    <main @click="showKeyBroad">
+      <div>车牌号</div>
+      <div>{{plate}}</div>
+    </main>
+    <div v-if="message">
+      <el-alert type="success" title="提示" :description="message" show-icon>
+      </el-alert>
+    </div>
+    <div style="margin-top:18px" align="center">
+        <button style="width:95%;margin:0px;height:40px;line-height: 40px;border-radius: 10px; background: #67c23a;color:white" @click="confirm">
+          查看订单
+        </button>
+    </div>
+    <footer>
+      <div class="keyboard" v-show="showChar">
+        <div style="width:100%; text-align:center;color: white;" @click="hideKeyBoard">
+          <i class="el-icon-arrow-down"></i>
+        </div>
+        <div>
+            <div style="text-align: center">
+              <button class="keyButton" v-for="(item, index) in chars1" :key="index" @click="handClick(item.name)">{{item.name}}</button>
+            </div>
+            <div style="height:5px"></div>
+            <div style="text-align: center">
+              <button class="keyButton" v-for="(item, index) in chars2" :key="index" @click="handClick(item.name)">{{item.name}}</button>
+            </div>
+            <div style="height:5px"></div>
+            <div style="text-align: center">
+              <button class="keyButton" v-for="(item, index) in chars3" :key="index" @click="handClick(item.name)">{{item.name}}</button>
+            </div>
+            <div style="height:5px"></div>
+            <div style="text-align: center">
+              <button class="keyButton" v-for="(item, index) in chars4" :key="index" @click="handClick(item.name)">{{item.name}}</button>
+            </div>
+            <div style="height:2px"></div>
+          </div>
+      </div>
+      <div class="keyboard" v-show="showLetters">
+        <div style="width:100%; text-align:center;color: white;" @click="hideKeyBoard">
+          <i class="el-icon-arrow-down"></i>
+        </div>
+        <div>
+            <div style="text-align: center">
+                <button class="keyButton" v-for="(item, index) in numbers" :key="index" @click="handClick(item.name)">{{item.name}}</button>
+            </div>
+            <div style="height:5px"></div>
+            <div style="text-align: center">
+                <button class="keyButton" v-for="(item, index) in letters1" :key="index" @click="handClick(item.name)">{{item.name}}</button>
+            </div>
+            <div style="height:5px"></div>
+            <div style="text-align: center">
+                <button class="keyButton" v-for="(item, index) in letters2" :key="index" @click="handClick(item.name)">{{item.name}}</button>
+            </div>
+            <div style="height:5px"></div>
+            <div style="text-align: center">
+                <button class="keyButton" v-for="(item, index) in letters3" :key="index" @click="handClick(item.name)" >
+                    <span v-if="item.name != 'DEL'"> {{item.name}}</span>
+                    <span v-else><i class="el-icon-close"></i></span>
+                </button>
+            </div>
+            <div style="height:2px"></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="./libs/vue.js"></script>
+  <script src="./libs/axios.js"></script>
+  <!-- <script src="./libs/elementUI/index.js"></script> -->
+  <script src="./index.js"></script>
+  <script src="./libs/jweixin-1.0.0.js"></script>
+</body>
+</html>

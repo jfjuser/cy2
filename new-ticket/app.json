@@ -1,0 +1,36 @@
+{
+	"pages": [
+        "pages/tickets/tickets",
+        "pages/me/me",
+        "pages/suggestion/suggestion",
+        "pages/merchantinfo/merchantinfo",
+		"pages/login/login",
+		"pages/QRCode/QRCode"
+	],
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+				"pagePath": "pages/tickets/tickets",
+				"iconPath": "images/coupon.png",
+				"selectedIconPath": "images/coupon-select.png",
+				"text": "优惠券"
+			},
+			{
+				"pagePath": "pages/me/me",
+				"iconPath": "images/wo.png",
+				"selectedIconPath": "images/wo-select.png",
+				"text": "我的"
+			}
+		]
+	},
+	"networkTimeout": {
+		"request": 10000,
+		"downloadFile": 10000,
+		"uploadFile": 10000,
+		"connectSocket": 10000
+	}
+}

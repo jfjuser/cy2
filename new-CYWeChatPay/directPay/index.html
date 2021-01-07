@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>订单详情</title>
+  <link rel="stylesheet" href="./index.css">
+<style>
+  [v-cloak] {
+    display: none;
+  }
+</style>
+</head>
+<body>
+<div id="app" v-cloak>
+    <div class="order-info">
+      <div>
+        <span>车场名称</span>
+        <span>{{params.departmentName}}</span>
+      </div>
+      <div>
+        <span>车牌号码</span>
+        <span>{{params.plate}}</span>
+      </div>
+      <div>
+        <span>入场时间</span>
+        <span>{{params.inTime}}</span>
+      </div>
+      <div>
+        <span>当前时间</span>
+        <span>{{params.queryTime}}</span>
+      </div>
+      <div>
+        <span>停车时长</span>
+        <span>{{params.duration}}</span>
+      </div>
+      <div>
+        <span>支付金额</span>
+        <span class="money">{{params.price == '正在查询..' ? '正在查询..' : params.price + '元'}}</span>
+      </div>
+    </div>
+    <div v-if="isShow" class="pay" :disabled="disabled" @click="weixinPay">{{btnText}}</div>
+  </div>
+  <script src="./libs/vue.js"></script>
+  <script src="./libs/axios.js"></script>
+  <script src="./index.js"></script>
+  <script src="./libs/jweixin-1.0.0.js"></script>
+</body>
+</html>

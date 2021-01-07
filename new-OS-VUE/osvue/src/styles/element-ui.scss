@@ -1,0 +1,57 @@
+ //to reset element-ui default css
+ .el-upload {
+   input[type="file"] {
+     display: none !important;
+   }
+ }
+
+ .el-upload__input {
+   display: none;
+ }
+ .el-dialog {
+   transform: none;
+   left: 0;
+   position: relative;
+   margin: 0 auto;
+   border-radius: 8px;
+   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+ }
+  //element ui upload
+ .upload-container {
+   .el-upload {
+    //  width: 100%;
+     border: 1px dotted #d9d9d9;
+     border-radius: 4px;
+     .el-upload-dragger {
+       width: 100%;
+       height: 200px;
+     }
+   }
+ }
+ #upload>.el-upload {
+   width: 100% !important;
+ }
+//   //autoel-autocomplete
+ .el-autocomplete-suggestion__wrap {
+   padding: 5px 0;
+   margin-bottom: -18px !important;
+   margin-right: -18px !important;
+   background: #bbbaba;
+   border: 0;
+   .el-autocomplete-suggestion__list {
+     text-align: center;
+     li {
+       padding: 0 10px;
+       display: inline-block;
+      //  width: 30px;
+       background: #ffffff;
+       margin-right: 2px;
+       text-align: center;
+       border-radius: 4px;
+     }
+   }
+ }
+
+ .el-popper[x-placement^=bottom] .popper__arrow::after {
+   border-bottom-color: #bbbaba;
+ }

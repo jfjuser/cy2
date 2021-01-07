@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>交易详情</title>
+  <style>
+    .main-body div{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 30px;
+      color: grey;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body style="margin: 0; background: #eee">
+  <div id="app" >
+    <div class="header" style="display: flex;align-items: center;padding: 10px;">
+      <img style="width:30px;" src="./libs/img/success.png" alt="成功">
+      <span style="color:green;text-indent:0.5rem;font-weight:900">支付成功</span>
+    </div>
+    <div class="main">
+      <div class="main-header"style="margin: 0 auto;text-align:center; background:white;padding:10px;">
+        <div>{{params.departmentName}}</div>
+        <h2 style="margin:10px;color:red">￥{{params.price}}</h2>
+        <div style="font-size: 14px;color:#ff7300" class="tips"></div>
+      </div>
+      <div class="main-body" style="margin-top: 5px;background:white;padding:10px;">
+        <div><span style="color: black;">停车时长</span><span>{{params.duration}}</span></div>
+        <div><span style="color: black;">车牌号码</span><span>{{params.plate}}</span></div>
+        <div><span style="color: black;">支付时间</span><span>{{params.payTime}}</span></div>
+      </div>
+    </div>
+  </div>
+  <script src="./libs/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data () {
+        return{
+          params: {
+            departmentName: '加载中..',
+            price: '加载中..',
+            plate: '加载中..',
+            duration: '加载中..',
+            payTime: '加载中..',
+            time: '加载中..'
+          },
+          
+        }
+      },
+      mounted() {
+        // 获取数据
+        let query = window.location.href.split('?')[1]
+        query = decodeURIComponent(query)
+        var objData = query.split('=')[1]
+        objData = objData.replace(/%3A/g, ':');
+        this.params = JSON.parse(objData)
+        // 倒计时
+        let minute = this.freeOutTime - 1
+        let second = '59'
+        let flag = false
+        setInterval(() => {
+          if (minute == 00 && second == 01) {
+            flag = true
+          } else {
+            second --
+            if (second == 00) {
+              second = 59
+              minute --
+              if (minute < 10) minute = '0' + minute
+            }
+            if(second < 10) second = '0' + second
+          }
+          if(flag) {
+            this.params.time = '00' + '分钟' + '00' + '秒'
+          } else {
+            this.params.time = minute + '分钟' + second + '秒'
+          }
+        }, 1000)
+      }
+    })
+  </script>
+</body>
+</html>

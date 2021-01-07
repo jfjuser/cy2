@@ -1,0 +1,97 @@
+<loading hidden="{{hidden}}">
+    加载中....
+</loading>
+<view class='container'>
+    <view class='header' wx:if="{{sigle || quiet || move || !inset}}">
+		<view wx:if="{{sigle}}" class='moveQrCode {{select == 3?"selectQrCode":""}}' bindtap='sigleUse'>单次扫</view>
+		<view wx:if="{{quiet}}" class='quietQrCode {{select == 0?"selectQrCode":""}}' bindtap='quietQrCode'>静态码</view>
+		<view wx:if="{{move}}" class='moveQrCode {{select == 1?"selectQrCode":""}}' bindtap='clickMove'>动态码</view>
+		<view wx:if="{{inset}}" class='insetPlate {{select == 2?"selectQrCode":""}}' bindtap='insetPlate'>输车牌</view>
+    </view>
+
+     <view class='content' wx:if="{{showQrcode == true}}">
+        <view class='img' wx:if="showImage">
+            <image bindtap="previewImg" mode="scaleToFill" src='{{imagePath}}'></image>
+        </view>
+        <view class='toast'>
+            {{text}}
+        </view>
+    </view> 
+
+    <view wx:if="{{showQrcode == false}}">
+        <view class='header'>
+            <view class='gas-car {{flag == true?"flagType":""}}'  bindtap='gasCar'>汽油车</view>
+            <view class='new-car {{flag == false?"flagType":""}}' bindtap='newCar'>新能源</view>
+        </view>
+        <!--车牌号输入  -->
+        <view>
+            <view class='plate'>
+                <view>车牌号  </view>
+				<view >{{carNum}}</view>
+            </view>
+        </view>
+
+        <view class='submit'>
+            <button type='primary' bindtap='bindPlate' disabled='{{disabled}}' class='btn_bing'>立即绑定</button>
+        </view>
+
+         <view class='keyboard' wx:if="{{showChar}}">
+            <view class='chars'>
+                <view style='text-align:center'>
+                    <button wx:for="{{chars1}}" wx:key="id" wx:for-index="idx" class='button' data-name="{{item.name}}" bindtap='handleClick'>{{item.name}}</button>
+                </view>
+                <view style='height:5rpx'></view>
+
+				<view style='text-align:center'>
+                    <button wx:for="{{chars2}}" wx:key="id" wx:for-index="idx" class='button' data-name="{{item.name}}" bindtap='handleClick'>{{item.name}}</button>
+                </view>
+                <view style='height:5rpx'></view>
+
+				<view style='text-align:center'>
+                    <button wx:for="{{chars3}}" wx:key="id" wx:for-index="idx" class='button' data-name="{{item.name}}" bindtap='handleClick'>{{item.name}}</button>
+                </view>
+                <view style='height:5rpx'></view>
+
+				<view style='text-align:center'>
+                    <button wx:for="{{chars4}}" wx:key="id" wx:for-index="idx" class='button' data-name="{{item.name}}" bindtap='handleClick'>{{item.name}}</button>
+                </view>
+                <view style='height:5rpx'></view>
+            </view>
+        </view> 
+
+        <view class='keyboard' wx:if="{{showLetter}}">
+            <view class='letter'>
+                <view style='text-align:center'>
+                    <button wx:for="{{numbers}}" wx:key="id" wx:for-index="idx" class='button' data-name="{{item.name}}" bindtap='handleClick'>{{item.name}}</button>
+                </view>
+                <view style='height:5rpx'></view>
+
+                <view style='text-align:center'>
+                    <button wx:for="{{letters1}}" wx:key="id" wx:for-index="idx" class='button' data-name="{{item.name}}" bindtap='handleClick'>{{item.name}}</button>
+                </view>
+                <view style='height:5rpx'></view>
+
+                <view style='text-align:center'>
+                    <button wx:for="{{letters2}}" wx:key="id" wx:for-index="idx" class='button' data-name="{{item.name}}" bindtap='handleClick'>{{item.name}}</button>
+                </view>
+                <view style='height:5rpx'></view>
+
+                <view style='text-align:center'>
+                    <button wx:for="{{letters3}}" wx:key="id" wx:for-index="idx" class='button'  data-name="{{item.name}}" bindtap='handleClick'>
+					<view wx:if="{{item.name == 'DEL'}}"> 
+						<icon   type="cancel" size="20" color="warn" />
+					</view>
+					<view wx:if="{{item.name != 'DEL'}}"> 
+						 {{item.name}}
+					</view>
+                    </button>
+                </view>
+                <view style='height:5rpx'></view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="canvas-box">
+    <canvas hidden="{{canvasHidden}}" canvas-id="mycanvas" />
+</view>

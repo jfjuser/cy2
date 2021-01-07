@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>无牌车入场</title>
+</head>
+<body>
+  <script>
+    var a = window.location.href
+    var host = 'https://www.cytingchechang.com/'
+    // var host = 'https://beta.cytingchechang.com/'
+    var appid = 'wx915008be9bda881b'
+    var redirectUrl = encodeURIComponent(host + 'view/CYWeChatPay/noPlate/index.html?' + a.split('?')[1])
+    var url =
+    `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appid}&redirect_uri=${redirectUrl}&response_type=code&scope=snsapi_base`
+        window.location.href = url
+  </script>
+</body>
+</html>

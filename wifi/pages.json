@@ -1,0 +1,192 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "主页"
+			}
+		},
+		{
+			"path": "pages/person/index",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
+		}
+	],
+	"subPackages": [
+		{
+			"root": "pageA",
+			"name": "pageA",
+		     "pages": [
+				 {
+				 	"path": "equipment/index",
+				 	"style": {
+				 		"navigationBarTitleText": "设备管理"
+				 	}
+				 },
+				 {
+				 	"path": "equipment/client",
+				 	"style": {
+				 		"navigationBarTitleText": "设备管理"
+				 	}
+				 },
+				 {
+				 	"path": "equipment/scan",
+				 	"style": {
+				 		"navigationBarTitleText": "添加设备"
+				 	}
+				 },
+				 {
+				 	"path": "equipment/wifi",
+				 	"style": {
+				 		"navigationBarTitleText": "设置wifi"
+				 	}
+				 },
+				 {
+				 	"path": "equipment/setParameters",
+				 	"style": {
+				 		"navigationBarTitleText": "设置参数"
+				 	}
+				 },
+				 {
+				 	"path": "equipment/change",
+				 	"style": {
+				 		"navigationBarTitleText": "修改部门通道"
+				 	}
+				 }
+			 ]
+		},
+		{
+			"root": "pageB",
+			"name": "pageB",
+		     "pages": [
+				 {
+				 	"path": "faceDetail/index",
+				 	"style": {
+				 		"navigationBarTitleText": "人脸详情"
+				 	}
+				 },
+				 {
+				 	"path": "addFace/index",
+				 	"style": {
+				 		"navigationBarTitleText": "人脸录入"
+				 	}
+				 },
+				 {
+				 	"path": "faceManage/index",
+				 	"style": {
+				 		"navigationBarTitleText": "人脸管理"
+				 	}
+				 }
+			 ]
+		},
+		{
+			"root": "pageC",
+			"name": "pageC",
+		     "pages": [
+				 {
+				 	"path": "authorize/index",
+				 	"style": {
+				 		"navigationBarTitleText": "授权"
+				 	}
+				 },
+				 {
+				 	"path": "phoneLogin/index",
+				 	"style": {
+				 		"navigationBarTitleText": "账户登录"
+				 	}
+				 },
+				 {
+				 	"path": "login/index",
+				 	"style": {
+				 		"navigationBarTitleText": "账户登录"
+				 		// ,
+				 		// "navigationBarBackgroundColor": "#eee",
+				 		// "navigationBarTextStyle": "black",
+				 		// "backgroundColor": "#000"
+				 	}
+				 },
+				 {
+				 	"path": "userInfo/index",
+				 	"style": {
+				 		"navigationBarTitleText": "个人资料"
+				 	}
+				 },
+				 {
+				 	"path": "bindPhone/index",
+				 	"style": {
+				 		"navigationBarTitleText": "手机号绑定"
+				 	}
+				 },
+				 {
+				 	"path": "inOut/index",
+				 	"style": {
+				 		"navigationBarTitleText": "通行记录"
+				 	}
+				 }
+			 ]
+		}
+	],
+	"preloadRule": {
+		"pages/index/index": {
+			"network": "all",
+			"packages": ["pageA", "pageB", "pageC"]
+		},
+		"pages/person/index": {
+			"network": "all",
+			"packages": ["pageC"]
+		}
+	 },
+	"tabBar": {
+	    "color": "#7A7E83",
+	    "selectedColor": "#1296db",
+	    "borderStyle": "black",
+	    "backgroundColor": "#ffffff",
+	    "list": [{
+	        "pagePath": "pages/index/index",
+	        "iconPath": "static/home.png",
+	        "selectedIconPath": "static/home_ok.png",
+	        "text": "主页"
+	    }, {
+	        "pagePath": "pages/person/index",
+	        "iconPath": "static/person.png",
+	        "selectedIconPath": "static/person_ok.png",
+	        "text": "个人中心"
+	    }]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "#fff",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#1296db",
+		"backgroundColor": "#F8F8F8",
+		"usingComponents": {
+		    "van-field": "/static/vant/field/index",
+			"van-notice-bar": "/static/vant/notice-bar/index",
+			"van-grid": "/static/vant/grid/index",
+			"van-grid-item": "/static/vant/grid-item/index",
+			"van-radio-group": "/static/vant/radio-group/index",
+			"van-radio": "/static/vant/radio/index",
+			"van-button": "/static/vant/button/index",
+			"van-toast": "/static/vant/toast/index",
+			"van-search": "/static/vant/search/index",
+			"van-popup": "/static/vant/popup/index",
+			"van-overlay": "/static/vant/overlay/index",
+			"van-transition": "/static/vant/transition/index",
+			"van-empty": "/static/vant/empty/index",
+			"van-loading": "/static/vant/loading/index",
+			"van-icon": "/static/vant/icon/index",
+			"van-swipe-cell": "/static/vant/swipe-cell/index",
+			"van-checkbox-group": "/static/vant/checkbox-group/index",
+			"van-checkbox": "/static/vant/checkbox/index",
+			"van-tabs": "/static/vant/tabs/index",
+			"van-tab": "/static/vant/tab/index",
+			"van-cell": "/static/vant/cell/index",
+			"van-dropdown-menu": "/static/vant/dropdown-menu/index",
+			"van-dropdown-item": "/static/vant/dropdown-item/index",
+			"van-count-down": "/static/vant/count-down/index"
+			// ,
+			// "van-calendar": "/static/vant/calendar/index"
+		}
+		// #1296db
+	}
+}

@@ -1,0 +1,17 @@
+<view class="container">
+    <view class="userinfo">
+        <image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover"></image>
+    </view>
+    <view class="section">
+        <view style='background: #E6A23C;' bindtap='suggestion'>
+            <view>意见反馈</view>
+        </view>
+        <view bindtap='merchantinfo'>
+            <view>商户信息</view>
+        </view>
+        <view wx:if="{{disabled}}" style='background:red !important' bindtap='logout'>
+            <view>退出登录</view>
+        </view>
+        <!-- <view wx:else  bindtap='login' ><view>登录</view></view>  -->
+    </view>
+</view>

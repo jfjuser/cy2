@@ -1,0 +1,483 @@
+[
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "IP地址",
+        "name": "addr",
+        "value": "beta.cytingchechang.com",
+        "type": 1,
+        "inputType": 2,
+        "remarks": "云平台地址，可以是域名或IP（192.168.0.12）",
+        "options": [
+            {}
+        ],
+        "classify": "云平台"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "端口号",
+        "name": "port",
+        "value": "53600",
+        "type": 1,
+        "inputType": 1,
+        "min": 1,
+        "max": 65535,
+        "remarks": "云平台接入端口",
+        "options": [
+            {}
+        ],
+        "classify": "云平台"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "帐号",
+        "name": "id",
+        "value": "",
+        "type": 1,
+        "inputType": 2,
+        "remarks": "云平台分配的ID",
+        "options": [
+            {}
+        ],
+        "classify": "云平台"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "密钥",
+        "name": "key",
+        "value": "",
+        "type": 1,
+        "inputType": 2,
+        "remarks": "云平台分配的密钥",
+        "options": [
+            {}
+        ],
+        "classify": "云平台"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "图片对齐阀值",
+        "name": "pAlignLevel",
+        "value": 20,
+        "type": 3,
+        "min": 1,
+        "max": 100,
+        "remarks": "注册图片时，检测图片内，人头的对齐阀值",
+        "options": [
+            {}
+        ],
+        "classify": "识别参数"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "视频检测阀值",
+        "name": "vDetLevel",
+        "value": 70,
+        "type": 3,
+        "min": 1,
+        "max": 100,
+        "options": [
+            {}
+        ],
+        "classify": "识别参数",
+        "remarks": " 视频流内，检测人头的对齐阀值"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "视频检测帧数",
+        "name": "videoGap",
+        "value": 5,
+        "type": 3,
+        "min": 2,
+        "max": 8,
+        "options": [
+            {}
+        ],
+        "classify": "识别参数",
+        "remarks": " 视频流内的检测帧数"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "识别区x坐标",
+        "name": "aiRectX",
+        "value": 0,
+        "type": 3,
+        "min": 0,
+        "max": 1055,
+        "remarks": "人头有效识别区，左上角x",
+        "options": [
+            {}
+        ],
+        "classify": "识别参数"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "识别区Y坐标",
+        "name": "aiRectY",
+        "value": 0,
+        "type": 3,
+        "min": 0,
+        "max": 1910,
+        "remarks": "人头有效识别区，左上角Y坐标",
+        "options": [
+            {}
+        ],
+        "classify": "识别参数"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "识别区宽度",
+        "name": "aiRectWidth",
+        "value": 1900,
+        "type": 3,
+        "min": 480,
+        "max": 1900,
+        "remarks": "人头有效识别区水平宽度",
+        "options": [
+            {}
+        ],
+        "classify": "识别参数"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "识别区高度",
+        "name": "aiRectHeight",
+        "value": 1920,
+        "type": 3,
+        "min": 640,
+        "max": 1920,
+        "remarks": "人头有效识别区高度",
+        "options": [
+            {}
+        ],
+        "classify": "识别参数"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "补光灯关闭时间",
+        "name": "ledCloseTime",
+        "value": 1,
+        "type": 3,
+        "min": 0,
+        "max": 99,
+        "remarks": "补光灯关闭时间 （开启与半闭都为相同的1时，则常开，反之为0，常关）",
+        "options": [
+            {}
+        ],
+        "classify": "补光灯"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "补光灯开启时间",
+        "name": "ledOpenTime",
+        "value": 1,
+        "type": 3,
+        "min": 0,
+        "max": 1440,
+        "remarks": "补光灯开启时间 （开启与半闭都为相同的1时，则常开，反之为0，常关）",
+        "options": [
+            {}
+        ],
+        "classify": "补光灯"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "补光灯亮度",
+        "name": "ledlightlevel",
+        "value": 99,
+        "type": 3,
+        "min": 1,
+        "max": 99,
+        "remarks": "补光灯亮度",
+        "options": [
+            {}
+        ],
+        "classify": "补光灯"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "识别输出间隔",
+        "name": "faceGapTime",
+        "value": 2,
+        "type": 3,
+        "min": 1,
+        "max": 20,
+        "remarks": "输出人脸间隔（同一个人，长期站在相机前，连续输出信号的时间间隔）",
+        "options": [
+            {}
+        ],
+        "classify": "识别输出"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "识别可信度",
+        "name": "verfiylevel",
+        "value": 75,
+        "type": 3,
+        "min": 1,
+        "max": 100,
+        "remarks": "高于或等于该值，则输出结果，值越大，则比对越严格，反之则越宽松",
+        "options": [
+            {}
+        ],
+        "classify": "识别参数"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "调试日志",
+        "name": "debuglevel",
+        "value": 6,
+        "type": 3,
+        "min": 0,
+        "max": 10,
+        "remarks": "调试日志，大于6关闭，（非工程人员，不能修改本项）",
+        "options": [
+            {}
+        ],
+        "classify": "调试"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "音量大小",
+        "name": "audioVolume",
+        "value": 10,
+        "type": 3,
+        "min": 0,
+        "max": 10,
+        "remarks": "音量输出大小",
+        "options": [
+            {}
+        ],
+        "classify": "语音"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "指示灯颜色",
+        "name": "ledcolor",
+        "value": "55",
+        "type": 2,
+        "remarks": "指示灯空闲时的颜色",
+        "selectType": 1,
+        "options": [
+            {
+                "value": "7",
+                "label": "红色",
+                "text": "红色"
+            },
+            {
+                "value": "55",
+                "label": "黄色",
+                "text": "黄色"
+            },
+            {
+                "value": "224",
+                "label": "蓝色",
+                "text": "蓝色"
+            }
+        ],
+        "classify": "指示灯"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "进出记录开关",
+        "name": "enRecordIO",
+        "value": "1",
+        "type": 4,
+        "remarks": "识别到人员时是否保存进出记录",
+        "options": [
+            {
+                "value": "1",
+                "label": "开"
+            },
+            {
+                "value": "0",
+                "label": "关"
+            }
+        ],
+        "classify": "历史记录"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "进出标识",
+        "name": "dir",
+        "value": "0",
+        "type": 4,
+        "remarks": "标识人员的进出方向",
+        "options": [
+            {
+                "value": "0",
+                "label": "进向"
+            },
+            {
+                "value": "1",
+                "label": "外出"
+            }
+        ],
+        "classify": "基本参数"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "活检阀值",
+        "name": "liveconfthres",
+        "value": 60,
+        "type": 3,
+        "min": 0,
+        "max": 100,
+        "remarks": "活体检测阀值，值越高时，越严格，当为0时，关闭活体检测功能",
+        "options": [
+            {}
+        ],
+        "classify": "识别参数"
+    },
+    {
+        "fileName": "OsdConfig.ini",
+        "chineseName": "时间戳X位置",
+        "name": "txtx",
+        "value": 1,
+        "type": 3,
+        "min": 1,
+        "max": 99,
+        "remarks": "时间戳显示在图片上的X坐标相对位置，百分比（19-01-10以后的版本才支持OSD时间戳）",
+        "options": [
+            {}
+        ],
+        "classify": "抓图参数"
+    },
+    {
+        "fileName": "OsdConfig.ini",
+        "chineseName": "时间戳Y位置",
+        "name": "txty",
+        "value": 1,
+        "type": 3,
+        "min": 1,
+        "max": 99,
+        "remarks": "时间戳Y坐标相对位置，百分比（19-01-10以后的版本才支持OSD时间戳）",
+        "options": [
+            {}
+        ],
+        "classify": "抓图参数"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "韦根类型",
+        "name": "wGMODE",
+        "value": "0",
+        "type": 4,
+        "remarks": "韦根信号输出类型",
+        "options": [
+            {
+                "value": "0",
+                "label": "韦根34"
+            },
+            {
+                "value": "1",
+                "label": "韦根26"
+            }
+        ],
+        "classify": "识别输出"
+    },
+    {
+        "fileName": "OsdConfig.ini",
+        "chineseName": "OSD字体大小",
+        "name": "fontSize",
+        "value": "24",
+        "type": 4,
+        "remarks": "抓取图片内显示的文字，字体大小",
+        "options": [
+            {
+                "value": "16",
+                "label": "16号字体"
+            },
+            {
+                "value": "24",
+                "label": "24号字体"
+            },
+            {
+                "value": "32",
+                "label": "32号字体"
+            },
+            {
+                "value": "48",
+                "label": "48号字体"
+            },
+            {
+                "value": "56",
+                "label": "56号字体"
+            },
+            {
+                "value": "64",
+                "label": "64号字体"
+            }
+        ],
+        "classify": "抓图参数"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "识别距离",
+        "name": "minFaceWidth",
+        "value": 5,
+        "type": 3,
+        "min": 1,
+        "max": 1080,
+        "remarks": "调节识别距离，值小则远，值大则近，（具体数值与配的镜头有关）",
+        "options": [
+            {}
+        ],
+        "classify": "识别参数"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "注册人脸图片",
+        "name": "regFacePicPar",
+        "value": [],
+        "type": 5,
+        "remarks": "注册人脸图片的推送与保存参数设定",
+        "options": [
+            {
+                "value": "1",
+                "label": "推送人脸"
+            },
+            {
+                "value": "2",
+                "label": "保存人脸"
+            },
+            {
+                "value": "4",
+                "label": "保存全景图片"
+            }
+        ],
+        "classify": "进出记录参数"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "未注册人脸图片",
+        "name": "unRegFacePicPar",
+        "value": [],
+        "type": 5,
+        "remarks": "未注册人脸图片的推送与保存参数设定",
+        "options": [
+            {
+                "value": "1",
+                "label": "推送图片"
+            },
+            {
+                "value": "2",
+                "label": "保存图片"
+            }
+        ],
+        "classify": "进出记录参数"
+    },
+    {
+        "fileName": "AppConfig.ini",
+        "chineseName": "活体参数",
+        "name": "livedelay",
+        "value": 3,
+        "type": 3,
+        "min": 0,
+        "max": 20,
+        "remarks": "调节单目活体级别，值大则检测严格，小则宽松，19-02-23后版本支持本功能",
+        "options": [
+            {}
+        ],
+        "classify": "识别参数"
+    }
+]

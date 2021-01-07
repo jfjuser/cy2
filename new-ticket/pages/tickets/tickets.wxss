@@ -1,0 +1,46 @@
+/* pages/me/me.wxss */
+
+page {
+        height: 100%;
+}
+
+.container {
+        height: 100%;
+        font-size: 35rpx;
+        display: flex;
+        flex-direction: column;
+        background: #f8f8ff;
+        align-items: flex-start;
+        padding: 30rpx;
+}
+
+form {
+        width: 100%;
+}
+
+.section__title {
+        padding: 0 20rpx;
+	color: green;
+}
+
+radio-group {
+        width: 100%;
+        padding: 20rpx;
+}
+
+radio-group>view {
+        padding: 10rpx;
+}
+
+.btn_bing {
+        width: 90%;
+        margin-top: 20rpx;
+}
+
+.noData{
+	color: grey;
+	font-size: 40rpx;
+	height: 120rpx;
+	line-height: 120rpx;
+	text-align: center;
+}

@@ -1,0 +1,96 @@
+
+.uni-load-more__text.uni-load-more__text{
+		font-size: 28rpx !important;
+}
+.van-empty__image{
+		width: 320rpx !important;
+		height: 320rpx !important;
+}
+.van-empty__description{
+		font-size: 32rpx !important;
+}
+.face_list{
+		width: 100%;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		padding-bottom: 152rpx;
+		box-sizing: border-box;
+		-webkit-flex-wrap: wrap;
+		        flex-wrap: wrap;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		        justify-content: center;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		        align-items: center;
+}
+.face_list .cell,.face_list .list{
+		width: 100%;
+		box-sizing: border-box;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		font-size: 28rpx;
+		-webkit-flex-wrap: wrap;
+		        flex-wrap: wrap;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		        align-items: center;
+}
+.face_list .cell{
+		padding: 40rpx;
+		-webkit-box-pack: justify;
+		-webkit-justify-content: space-between;
+		        justify-content: space-between;
+		border-bottom: 2rpx solid #f0f0f0;
+}
+.faceInfo{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-flex: 1;
+		-webkit-flex: 1;
+		        flex: 1;
+		-webkit-flex-wrap: wrap;
+		        flex-wrap: wrap;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		        justify-content: center;
+		-webkit-box-align: start;
+		-webkit-align-items: flex-start;
+		        align-items: flex-start;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		        flex-direction: column;
+}
+.trigger{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-flex-wrap: wrap;
+		        flex-wrap: wrap;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		        align-items: center;
+}
+.trigger button{
+		font-size: 24rpx;
+		margin: 0 10rpx;
+}
+.trigger button:nth-child(1) {
+		color: #333;
+}
+.single .van-cell:after{
+		border: none;
+}
+.single{
+		border-bottom: 3rpx solid #eee;
+		padding: 40rpx 0;
+		box-sizing: border-box;
+}
+.single .van-cell__value{
+		word-wrap:break-word
+}
+

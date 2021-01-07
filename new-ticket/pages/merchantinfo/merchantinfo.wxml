@@ -1,0 +1,23 @@
+<!--pages/merchantinfo/merchantinfo.wxml-->
+<view class='contain'>
+  <view class='item'>
+    <label class='label_text'>商户信息</label>
+    <text>{{data.shopName}}</text>
+  </view>
+  <view class='item'>
+    <label class='label_text'>手机号码</label>
+    <text>{{data.phone}}</text>
+  </view>
+  <view class='item'>
+    <label class='label_text'>总金额</label>
+    <text>{{data.totalFee}}元</text>
+  </view>
+  <view class='item'>
+    <label class='label_text'>余额</label>
+    <text>{{data.nowFee}}元</text>
+  </view>
+  <view class='item'>
+    <label class='label_text'>商家地址</label>
+    <text>{{data.address}}</text>
+  </view>
+</view>

@@ -1,0 +1,80 @@
+/* pages/suggestion/suggestion.wxss */
+page{
+    height: 100%;
+	background: #ecf3ff;
+	min-height: 100%;
+}
+
+.text{
+    padding: 30rpx;
+    background: white;
+    text-align: center;
+    font-size: 32rpx;
+    padding-bottom: 20rpx;
+    color: #222121;
+}
+.form{
+    margin-top: 10rpx;
+}
+.item{
+    padding: 20rpx;
+    border-bottom: 10rpx solid #ecf3ff;
+    background: white;
+}
+.title{
+    padding: 0 0 10rpx 0;
+}
+.radio{
+    display: flex;
+    justify-content: space-between;
+}
+.suggestion{
+    font-size: 30rpx;
+    color: grey;
+}
+textarea{
+    font-size: 30rpx;
+    height: 260rpx;
+}
+/* 图片 */
+.pic {
+    height: 200rpx;
+    display: flex;
+    justify-content: left;
+    /* padding: 20rpx 0; */
+}
+
+.pic view{
+    width: 26%;
+    border-radius: 10rpx;
+    border: 2rpx dotted grey;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20rpx;
+}
+
+.pic view image{
+    width: 95%;
+    height: 95%;
+}
+
+.phone {
+    display: flex;
+}
+
+input{
+    padding-left: 20rpx;
+}
+
+.input-placeholder {
+    font-size: 30rpx;
+}
+
+.form-footer{
+    margin: 50rpx auto;
+}
+.form-footer view{
+    width: 80%;
+}

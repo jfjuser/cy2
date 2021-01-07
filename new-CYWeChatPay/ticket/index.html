@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>优惠券领取</title>
+  <link rel="stylesheet" href="./libs/elementUI/index.css">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div id="app">
+    <!-- 车牌选择 -->
+    <header>
+      <div class="gasCar" :class="{active:isActive}"  @click="gasCar">汽油车</div>
+      <div class="energyCar" :class="{active:!isActive}"  @click="energyCar">新能源</div>
+    </header>
+    <main @click="showKeyBroad">
+      <div>车牌号</div>
+      <div>{{plate}}</div>
+    </main>
+    <!-- 优惠券信息区 -->
+    <div style="padding-top:15px">
+      <div id="div_ticket" style="padding:10px;border-radius:4px;background:white;font-size: 15px;">
+        <p>&#x3000;&#x3000;恭喜您获得商家<span class="info">{{busyInfo.shopName}}</span>优惠券一张，
+          <span v-if="busyInfo.subType === 0">可免停车费<span class="info">{{busyInfo.item}}元</span></span>
+          <span v-if="busyInfo.subType === 1">可免费停车<span class="info">{{busyInfo.item}}</span></span>
+          <span v-if="busyInfo.subType === 2">可免费停车</span>
+          <span v-if="busyInfo.subType === 3">停车打折{{busyInfo.item}}</span>
+          ，立即绑定车牌使用吧!</p>
+        <p> &#x3000;&#x3000;温馨提示：请于<span class="info">{{timeFormatter(busyInfo.validateAt)}}</span>前出场！</p>
+      </div>
+    </div>
+    <div v-if="message">
+      <el-alert type="success" title="提示" :description="message" show-icon>
+      </el-alert>
+    </div>
+    <div style="margin-top:18px" align="center">
+        <el-button type="success" style="width:95%;margin:0px;" @click="confirm">立即绑定</el-button>
+    </div>
+    <footer>
+      <div class="keyboard" v-show="showChar">
+        <div style="width:100%; text-align:center;color: white;" @click="hideKeyBoard">
+          <i class="el-icon-arrow-down"></i>
+        </div>
+        <div>
+            <div style="text-align: center">
+              <el-button class="keyButton" v-for="(item, index) in chars1" :key="index" @click="handClick(item.name)">{{item.name}}</el-button>
+            </div>
+            <div style="height:5px"></div>
+            <div style="text-align: center">
+              <el-button class="keyButton" v-for="(item, index) in chars2" :key="index" @click="handClick(item.name)">{{item.name}}</el-button>
+            </div>
+            <div style="height:5px"></div>
+            <div style="text-align: center">
+              <el-button class="keyButton" v-for="(item, index) in chars3" :key="index" @click="handClick(item.name)">{{item.name}}</el-button>
+            </div>
+            <div style="height:5px"></div>
+            <div style="text-align: center">
+              <el-button class="keyButton" v-for="(item, index) in chars4" :key="index" @click="handClick(item.name)">{{item.name}}</el-button>
+            </div>
+            <div style="height:2px"></div>
+          </div>
+      </div>
+      <div class="keyboard" v-show="showLetters">
+        <div style="width:100%; text-align:center;color: white;" @click="hideKeyBoard">
+          <i class="el-icon-arrow-down"></i>
+        </div>
+        <div>
+            <div style="text-align: center">
+                <el-button class="keyButton" v-for="(item, index) in numbers" :key="index" @click="handClick(item.name)">{{item.name}}</el-button>
+            </div>
+            <div style="height:5px"></div>
+            <div style="text-align: center">
+                <el-button class="keyButton" v-for="(item, index) in letters1" :key="index" @click="handClick(item.name)">{{item.name}}</el-button>
+            </div>
+            <div style="height:5px"></div>
+            <div style="text-align: center">
+                <el-button class="keyButton" v-for="(item, index) in letters2" :key="index" @click="handClick(item.name)">{{item.name}}</el-button>
+            </div>
+            <div style="height:5px"></div>
+            <div style="text-align: center">
+                <el-button class="keyButton" v-for="(item, index) in letters3" :key="index" @click="handClick(item.name)" :icon="item.name == 'DEL'? 'el-icon-close': ''">
+                    <span v-if="item.name != 'DEL'"> {{item.name}}</span>
+                </el-button>
+            </div>
+            <div style="height:2px"></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="./libs/vue.js"></script>
+  <script src="./libs/axios.js"></script>
+  <script src="./libs/elementUI/index.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>

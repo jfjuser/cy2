@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!-- 状态栏的值可能为black, default, black-translucent -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- 是针对一些老的不识别viewport的浏览器，列如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="pragma" content="no-cache"   />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <script src="https://gw.alipayobjects.com/as/g/h5-lib/alipayjsapi/3.1.1/alipayjsapi.inc.min.js"></script>
+    <title></title>
+    <style>
+      * {
+        -webkit-touch-callout:none;  /*系统默认菜单被禁用*/
+        -webkit-user-select:none; /*webkit浏览器*/
+        -khtml-user-select:none; /*早期浏览器*/
+        -moz-user-select:none; /*火狐*/
+        -ms-user-select:none; /*IE10*/
+        user-select:none;
+      }
+     ::-webkit-scrollbar { width: 0 !important }
+     html, body {
+       overflow: hidden;
+       overflow-y: auto;
+       height: 100%;
+       min-height: 100%;
+       -ms-overflow-style: none;
+       overflow: -moz-scrollbars-none;
+     }
+      input {
+        -webkit-user-select:auto; /*webkit浏览器*/
+      }
+    </style>
+  </head>
+  <body style="margin:0;padding:0;background-color: #ffffff">
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
